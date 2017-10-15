@@ -1,0 +1,29 @@
+body {
+    background-image: url("../images/pink%20dust.png");
+}
+
+.header {
+    text-align: center;
+    font-size: 120px;
+    color: lightcoral;
+    font-family: cursive;
+    margin-bottom: 40px;
+}
+
+.main-content {
+    font-size: 40px;
+    color: lightcoral;
+    font-family: serif;
+}
+
+button:hover {
+    background-color: lightcoral;
+    background-image: none;
+}
+
+.button-style {
+    width: 80%;
+    height: 150px;
+    margin-bottom: 50px;
+    background-image: url("../images/concrete-texture.png");
+}
