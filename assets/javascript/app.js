@@ -19,9 +19,26 @@ $(document).ready(function() {
     var isFirstCorrect = false;
     var isSecondCorrect = false;
     var isThirdCorrect = false;
-
+    var number = 30;
 
     function showFirstQuestion() {
+    function run() {
+      intervalId = setInterval(decrement, 1000);
+    }
+    run();
+    function decrement() {
+
+      number--;
+
+      $("#timeSpot").html(number);
+
+      if (number === 0) {
+
+        stop();
+        incorrectAnswers++;
+        alert("Time Up!");
+      }
+    }
         $("#questionSpot").html("What is my name?");
         $("#answer1").html("Derek");
         $("#answer2").html("Jimmy");
@@ -85,6 +102,7 @@ $(document).ready(function() {
 
 
     function showSecondQuestion() {
+        number = 30;
         isAnswerCorrect = false;
         $(".hideThis").removeClass("invisible");
         $("#questionSpot").html("How old am I?");
@@ -170,6 +188,7 @@ $(document).ready(function() {
 
 
     function showThirdQuestion() {
+        number = 30;
         $(".hideThis").removeClass("invisible");
         $("#questionSpot").html("What's my favorite food?");
         $("#answer1").html("Pizza");
@@ -283,13 +302,4 @@ $(document).ready(function() {
         setTimeout(function() {location.reload();
         }, 5000);
     }
-
-
-
-
-
-
-
-
-
 }); // NO CODE BELOW HERE
