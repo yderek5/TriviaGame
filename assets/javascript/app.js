@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function () {
     $("#page-content").addClass("invisible");
     // When user clicks start button
-    $("#start-button").on("click", function() {
+    $("#start-button").on("click", function () {
         // start timer
         $("#start-button").addClass("invisible");
         $("#page-content").removeClass("invisible");
@@ -22,23 +22,24 @@ $(document).ready(function() {
     var number = 30;
 
     function showFirstQuestion() {
-    function run() {
-      intervalId = setInterval(decrement, 1000);
-    }
-    run();
-    function decrement() {
+        function run() {
+            intervalId = setInterval(decrement, 1000);
+        }
+        run();
 
-      number--;
+        function decrement() {
 
-      $("#timeSpot").html(number);
+            number--;
 
-      if (number === 0) {
+            $("#timeSpot").html(number);
 
-        stop();
-        incorrectAnswers++;
-        alert("Time Up!");
-      }
-    }
+            if (number === 0) {
+
+                stop();
+                incorrectAnswers++;
+                alert("Time Up!");
+            }
+        }
         $("#questionSpot").html("What is my name?");
         $("#answer1").html("Derek");
         $("#answer2").html("Jimmy");
@@ -46,18 +47,18 @@ $(document).ready(function() {
         $("#answer4").html("Roy");
         // answer logic
         // first answer choice
-        $("#answer1").on("click", function() {
+        $("#answer1").on("click", function () {
             isFirstCorrect = true;
             correctAnswers = 1;
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Congratulations you got the correct answer! --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {
+            setTimeout(function () {
                 return showSecondQuestion();
             }, 3000);
         });
         // second answer choice
-        $("#answer2").on("click", function() {
+        $("#answer2").on("click", function () {
             if (isFirstCorrect) {
                 incorrectAnswers = 0;
             } else {
@@ -66,12 +67,12 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: Derek --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {
-              return showSecondQuestion();
+            setTimeout(function () {
+                return showSecondQuestion();
             }, 3000);
         });
         // third answer choice
-        $("#answer3").on("click", function() {
+        $("#answer3").on("click", function () {
             if (isFirstCorrect) {
                 incorrectAnswers = 0;
             } else {
@@ -80,12 +81,12 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: Derek --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {
-               return showSecondQuestion();
+            setTimeout(function () {
+                return showSecondQuestion();
             }, 3000);
         });
         // fourth answer choice
-        $("#answer4").on("click", function() {
+        $("#answer4").on("click", function () {
             if (isFirstCorrect) {
                 incorrectAnswers = 0;
             } else {
@@ -94,8 +95,8 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: Derek --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {
-               return showSecondQuestion();
+            setTimeout(function () {
+                return showSecondQuestion();
             }, 3000);
         });
     } // end of first question
@@ -112,7 +113,7 @@ $(document).ready(function() {
         $("#answer4").html("12");
         // answer logic
         // first answer choice
-        $("#answer1").on("click", function() {
+        $("#answer1").on("click", function () {
             if (isFirstCorrect && isSecondCorrect) {
                 correctAnswers = 2;
             } else if (isFirstCorrect === false && isSecondCorrect === false) {
@@ -124,13 +125,13 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: 19 --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {
+            setTimeout(function () {
                 showThirdQuestion();
                 return;
             }, 3000);
         });
         // second answer choice
-        $("#answer2").on("click", function() {
+        $("#answer2").on("click", function () {
             isSecondCorrect = true;
             if (isFirstCorrect && isSecondCorrect) {
                 correctAnswers = 2;
@@ -143,13 +144,13 @@ $(document).ready(function() {
             $("#hideThis").addClass("invisible");
             $("#questionSpot").html("Congratulations you got the correct answer! --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {
+            setTimeout(function () {
                 showThirdQuestion();
                 return;
             }, 3000);
         });
         // third answer choice
-        $("#answer3").on("click", function() {
+        $("#answer3").on("click", function () {
             if (isFirstCorrect && isSecondCorrect) {
                 correctAnswers = 2;
             } else if (isFirstCorrect === false && isSecondCorrect === false) {
@@ -161,13 +162,13 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: 19 --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {
+            setTimeout(function () {
                 showThirdQuestion();
                 return;
             }, 3000);
         });
         // fourth answer choice
-        $("#answer4").on("click", function() {
+        $("#answer4").on("click", function () {
             if (isFirstCorrect && isSecondCorrect) {
                 correctAnswers = 2;
             } else if (isFirstCorrect === false && isSecondCorrect === false) {
@@ -179,8 +180,8 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: 19 --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {
-                showThirdQuestion()
+            setTimeout(function () {
+                showThirdQuestion();
             }, 3000);
             return;
         });
@@ -196,7 +197,7 @@ $(document).ready(function() {
         $("#answer3").html("Cheese Burgers");
         $("#answer4").html("Waffles");
         // answer logic
-        $("#answer1").on("click", function() {
+        $("#answer1").on("click", function () {
             if (isFirstCorrect && isSecondCorrect && isThirdCorrect) {
                 correctAnswers = 3;
             } else if (isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect === false) {
@@ -204,10 +205,10 @@ $(document).ready(function() {
             } else if (isFirstCorrect && isSecondCorrect && isThirdCorrect === false) {
                 correctAnswers = 2;
                 incorrectAnswers = 1;
-            } else if(isFirstCorrect === false && isSecondCorrect && isThirdCorrect) {
+            } else if (isFirstCorrect === false && isSecondCorrect && isThirdCorrect) {
                 correctAnswers = 2;
                 incorrectAnswers = 1;
-            } else if(isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect) {
+            } else if (isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect) {
                 incorrectAnswers = 2;
                 correctAnswers = 1;
             } else {
@@ -217,10 +218,11 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: Cheese Burgers --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {showResults();
+            setTimeout(function () {
+                showResults();
             }, 3000);
         });
-        $("#answer3").on("click", function() {
+        $("#answer3").on("click", function () {
             isThirdCorrect = true;
             if (isFirstCorrect && isSecondCorrect && isThirdCorrect) {
                 correctAnswers = 3;
@@ -229,10 +231,10 @@ $(document).ready(function() {
             } else if (isFirstCorrect && isSecondCorrect && isThirdCorrect === false) {
                 correctAnswers = 2;
                 incorrectAnswers = 1;
-            } else if(isFirstCorrect === false && isSecondCorrect && isThirdCorrect) {
+            } else if (isFirstCorrect === false && isSecondCorrect && isThirdCorrect) {
                 correctAnswers = 2;
                 incorrectAnswers = 1;
-            } else if(isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect) {
+            } else if (isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect) {
                 incorrectAnswers = 2;
                 correctAnswers = 1;
             } else {
@@ -242,10 +244,11 @@ $(document).ready(function() {
             $("#hideThis").addClass("invisible");
             $("#questionSpot").html("Congratulations you got the correct answer! --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {showResults();
+            setTimeout(function () {
+                showResults();
             }, 3000);
         });
-        $("#answer2").on("click", function() {
+        $("#answer2").on("click", function () {
             if (isFirstCorrect && isSecondCorrect && isThirdCorrect) {
                 correctAnswers = 3;
             } else if (isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect === false) {
@@ -253,10 +256,10 @@ $(document).ready(function() {
             } else if (isFirstCorrect && isSecondCorrect && isThirdCorrect === false) {
                 correctAnswers = 2;
                 incorrectAnswers = 1;
-            } else if(isFirstCorrect === false && isSecondCorrect && isThirdCorrect) {
+            } else if (isFirstCorrect === false && isSecondCorrect && isThirdCorrect) {
                 correctAnswers = 2;
                 incorrectAnswers = 1;
-            } else if(isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect) {
+            } else if (isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect) {
                 incorrectAnswers = 2;
                 correctAnswers = 1;
             } else {
@@ -266,10 +269,11 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: Cheese Burgers --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {showResults();
+            setTimeout(function () {
+                showResults();
             }, 3000);
         });
-        $("#answer4").on("click", function() {
+        $("#answer4").on("click", function () {
             if (isFirstCorrect && isSecondCorrect && isThirdCorrect) {
                 correctAnswers = 3;
             } else if (isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect === false) {
@@ -277,10 +281,10 @@ $(document).ready(function() {
             } else if (isFirstCorrect && isSecondCorrect && isThirdCorrect === false) {
                 correctAnswers = 2;
                 incorrectAnswers = 1;
-            } else if(isFirstCorrect === false && isSecondCorrect && isThirdCorrect) {
+            } else if (isFirstCorrect === false && isSecondCorrect && isThirdCorrect) {
                 correctAnswers = 2;
                 incorrectAnswers = 1;
-            } else if(isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect) {
+            } else if (isFirstCorrect === false && isSecondCorrect === false && isThirdCorrect) {
                 incorrectAnswers = 2;
                 correctAnswers = 1;
             } else {
@@ -290,16 +294,18 @@ $(document).ready(function() {
             $(".hideThis").addClass("invisible");
             $("#questionSpot").html("Sorry! The correct answer was: Cheese Burgers --- " +
                 "Correct Answers: " + correctAnswers + " --- " + "Incorrect Answers: " + incorrectAnswers);
-            setTimeout(function() {showResults();
+            setTimeout(function () {
+                showResults();
             }, 3000);
         });
     } // end of third question
 
     function showResults() {
         $(".hideThis").addClass("invisible");
-        $("#questionSpot").html("Correct Answers: " + correctAnswers + " --- "
-            + "Incorrect Answers: " + incorrectAnswers);
-        setTimeout(function() {location.reload();
+        $("#questionSpot").html("Correct Answers: " + correctAnswers + " --- " +
+            "Incorrect Answers: " + incorrectAnswers);
+        setTimeout(function () {
+            location.reload();
         }, 5000);
     }
 }); // NO CODE BELOW HERE
